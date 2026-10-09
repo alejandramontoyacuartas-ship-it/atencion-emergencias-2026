@@ -332,7 +332,7 @@ function ficha(k){sel=k;if(geo)geo.setStyle(sty);$('#vSel').value=k||'';if(!k){$
  $('#ficha').innerHTML=`<h3 style="font-size:22px;margin-top:6px">${nm[k]}</h3><dl>${r('Reportes del sismo',d.sismo||0)}${r('Viviendas en estado crítico',d.sismo_crit||0)}${r('Reportes pendientes de visita',d.sismo_pend||0)}${r('Valoraciones 1.er semestre',d.vis)}${r('Habitantes (DANE 2026)',d.pob)}</dl>`;}
 function init(){if(!window.L){$('#map').innerHTML='<p style="padding:16px">El mapa necesita conexión a internet.</p>';return;}
  map=L.map('map',{zoomSnap:.25,minZoom:11});
- L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:18,attribution:'© OpenStreetMap · © CARTO'}).addTo(map);
+ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:'Esri, HERE, Garmin, © OpenStreetMap'}).addTo(map);
  brk();geo=L.geoJSON(G,{style:sty,onEachFeature:(f,l)=>{if(f.properties.tipo==='limite_municipal')return;const k=keyOf(f);l.bindTooltip(()=>`<b>${nm[k]}</b><br>${LAY[cur]}: ${val(k)==null?'sin dato':fmt(val(k))}`,{sticky:true});l.on('click',()=>ficha(k));}}).addTo(map);
  const b=geo.getBounds();map.fitBounds(b,{padding:[8,8]});map.setMaxBounds(b.pad(.4));leg();}
 $('#vSel').innerHTML='<option value="">— Elegir —</option><option value="urbano">Zona urbana (cabecera)</option>'+vk.slice().sort((a,b)=>nm[a].localeCompare(nm[b],'es')).map(k=>`<option value="${k}">${nm[k]}</option>`).join('');
