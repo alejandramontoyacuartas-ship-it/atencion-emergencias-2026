@@ -321,7 +321,7 @@ const LAY={sismo:'Reportes del sismo',sismo_crit:'Viviendas críticas por el sis
 const RAMP=['#E6F4D2','#B9E08A','#7FC24A','#3E9A3A','#12745C'];
 let cur='sismo',sel=null,map,geo,breaks=[];
 const vk=G.features.filter(f=>f.properties.tipo==='vereda').map(f=>f.properties.key);
-const nm={urbano:'Zona urbana (cabecera)'};G.features.forEach(f=>{if(f.properties.tipo==='vereda')nm[f.properties.key]=f.properties.nombre;});
+const nm={urbano:'Zona urbana (cabecera)'};const TILDE={'San Andres':'San Andrés','Jamundi':'Jamundí','El Paraiso':'El Paraíso','Mercedes Abrego':'Mercedes Ábrego'};G.features.forEach(f=>{if(f.properties.tipo==='vereda')nm[f.properties.key]=TILDE[f.properties.nombre]||f.properties.nombre;});
 const keyOf=f=>f.properties.tipo==='perimetro_urbano'?'urbano':f.properties.key;
 const val=k=>(D[k]||{})[cur];
 function brk(){const v=[...vk,'urbano'].map(val).filter(x=>x>0).sort((a,b)=>a-b);const mx=v[v.length-1]||1;breaks=[...new Set([.25,.5,.75].map(q=>v[Math.floor(q*(v.length-1))]))].filter(b=>b>0&&b<mx);}
