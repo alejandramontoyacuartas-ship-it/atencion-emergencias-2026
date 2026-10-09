@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atención de Emergencias Girardota 2026</title>
+<meta name="description" content="Respuesta al Concejo Municipal de Girardota: atención de emergencias y valoraciones de riesgo en 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: portada institucional · cifras del año · un bloque por frente de atención · eventos del año · mapa · fuentes */
+:root{
+  --verde:#12745C; --verde-2:#148669; --verde-3:#0D9771; --lima:#68C200; --lima-txt:#3E7A00;
+  --bg:#F3F6F4; --surface:#FFFFFF; --surface-2:#E9F1EC; --fg:#16241F; --muted:#51625B; --line:#D5E0DA;
+  --crit:#B5400F; --crit-bg:#FBE9DF; --warn:#A86A00; --warn-bg:#FFF2D6; --ok:#12745C; --ok-bg:#E2F2EA; --info:#2B66B0; --info-bg:#E4EDF8;
+  --num:#12745C; --map-bg:#E6EEE9; --map-line:#FFFFFF;
+  --f-display:'Nunito','Trebuchet MS',Arial,sans-serif;
+  --f-body:'Nunito Sans','Segoe UI',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1A15; --surface:#13251E; --surface-2:#183027; --fg:#E7F1EC; --muted:#A3BBB0; --line:#28443A;
+  --lima-txt:#8FE03A; --crit:#FF8A57; --crit-bg:#3A1E12; --warn:#F2B341; --warn-bg:#352A10; --ok:#5FD3A6; --ok-bg:#12352A; --info:#7FB2F0; --info-bg:#16263A;
+  --num:#5FD3A6; --map-bg:#10241D; --map-line:#0C1A15; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1A15; --surface:#13251E; --surface-2:#183027; --fg:#E7F1EC; --muted:#A3BBB0; --line:#28443A;
+  --lima-txt:#8FE03A; --crit:#FF8A57; --crit-bg:#3A1E12; --warn:#F2B341; --warn-bg:#352A10; --ok:#5FD3A6; --ok-bg:#12352A; --info:#7FB2F0; --info-bg:#16263A;
+  --num:#5FD3A6; --map-bg:#10241D; --map-line:#0C1A15; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px}
+/* portada */
+.hero-band{background:#12745C}
+.hero{position:relative;max-width:1180px;margin:0 auto}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.hero-txt{position:absolute;left:0;top:0;bottom:0;width:30.2%;padding:clamp(16px,3vw,44px) clamp(14px,2.2vw,32px);display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1vw,14px);color:#fff}
+.hero-txt .eyebrow{font-weight:700;font-size:clamp(11px,1vw,14px);letter-spacing:.12em;text-transform:uppercase;color:#C9F09A}
+.hero-txt h1{font-weight:900;font-size:clamp(22px,2.9vw,40px)}
+.hero-txt .sub{font-size:clamp(12px,1.15vw,17px);color:#DDF0E7}
+.hero-txt .date{display:inline-block;align-self:flex-start;background:var(--lima);color:#0F2A10;font-weight:800;font-family:var(--f-display);border-radius:999px;padding:4px 14px;font-size:clamp(11px,1vw,15px)}
+@media (max-width:720px){.hero-txt{position:static;width:auto;background:#12745C;padding:20px 16px}}
+/* índice */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:1000;background:var(--verde);box-shadow:0 2px 0 var(--lima)}
+.bar .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px}
+.bar .wrap::-webkit-scrollbar{display:none}
+.bar a{color:#E3F3EA;text-decoration:none;font:700 15px var(--f-body);padding:8px 14px;border-radius:999px;white-space:nowrap}
+.bar a:hover,.bar a.on{background:#fff;color:var(--verde)}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--lima);outline-offset:2px}
+main{display:flex;flex-direction:column;gap:56px;padding-block:32px 64px}
+section{display:flex;flex-direction:column;gap:20px;scroll-margin-top:72px}
+.head{display:flex;flex-direction:column;gap:6px;max-width:860px}
+.kicker{font:800 13px var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--lima-txt)}
+.head h2{font-size:clamp(26px,3.4vw,38px);font-weight:900}
+.head p{color:var(--muted);font-size:17px;max-width:68ch}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g5{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card h3{font-size:19px;font-weight:800}
+.kpi .n{font:900 clamp(32px,4vw,46px)/1.05 var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
+.kpi .l{font-weight:700}
+.kpi .s{color:var(--muted);font-size:14px}
+.kpi.lead{background:var(--verde);border-color:var(--verde);color:#fff}
+.kpi.lead .n{color:#fff}.kpi.lead .s{color:#CFEBDD}
+.src{font-size:13px;color:var(--muted)}
+.note{border-radius:12px;padding:14px 16px;font-size:15px;color:var(--fg)}
+.note.ok{background:var(--ok-bg);border-left:5px solid var(--ok)}
+.note.warn{background:var(--warn-bg);border-left:5px solid var(--warn)}
+.note.info{background:var(--info-bg);border-left:5px solid var(--info)}
+.pill{display:inline-block;font:800 12px var(--f-display);letter-spacing:.04em;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.pill.crit{background:var(--crit-bg);color:var(--crit)}.pill.warn{background:var(--warn-bg);color:var(--warn)}.pill.ok{background:var(--ok-bg);color:var(--ok)}.pill.info{background:var(--info-bg);color:var(--info)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface-2);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.num{text-align:right}
+.bars{display:flex;flex-direction:column;gap:8px}
+.brow{display:grid;grid-template-columns:minmax(0,40%) 1fr 52px;align-items:center;gap:10px;font-size:15px}
+.brow .t{height:18px;background:var(--surface-2);border-radius:5px;overflow:hidden}
+.brow .f{display:block;height:100%;background:var(--verde-2);border-radius:5px}
+.brow .f.crit{background:var(--crit)}.brow .f.warn{background:#E0A030}.brow .f.info{background:var(--info)}.brow .f.lima{background:var(--lima)}
+.brow .v{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--fg);font:700 14px var(--f-body);padding:7px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:#fff}
+/* línea de tiempo */
+.tl{display:flex;flex-direction:column;gap:0;border-left:3px solid var(--lima);margin-left:8px}
+.ev{position:relative;padding:0 0 22px 22px;display:flex;flex-direction:column;gap:4px}
+.ev::before{content:"";position:absolute;left:-10px;top:4px;width:17px;height:17px;border-radius:50%;background:var(--surface);border:4px solid var(--verde)}
+.ev .d{font:800 13px var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--lima-txt)}
+.ev h3{font-size:19px}
+.ev p{color:var(--muted);max-width:75ch}
+.ev ul{margin:4px 0 0;padding-left:20px;color:var(--fg);max-width:75ch}
+/* mapa */
+.mapwrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:900px){.mapwrap{grid-template-columns:1fr}}
+#map{height:min(64vh,560px);min-height:360px;border-radius:12px;background:var(--map-bg)}
+.legend{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend .sw{display:inline-block;width:26px;height:12px;border-radius:3px}
+select{font:600 15px var(--f-body);padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);max-width:100%}
+.ficha dl{display:grid;grid-template-columns:1fr auto;margin:0}
+.ficha dt,.ficha dd{padding:8px 0;border-bottom:1px solid var(--line);margin:0;font-size:15px}
+.ficha dd{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.lines{display:flex;gap:12px;flex-wrap:wrap}
+.line{display:flex;align-items:center;gap:12px;background:var(--surface);border:2px solid var(--verde);border-radius:14px;padding:12px 18px}
+.line b{font:900 34px var(--f-display);color:var(--num)}
+footer{border-top:4px solid var(--lima);background:#12745C;color:#E3F3EA;padding-block:24px;font-size:14px}
+footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+/* leaflet esencial */
+.leaflet-pane,.leaflet-tile,.leaflet-tile-container,.leaflet-pane>svg,.leaflet-pane>canvas,.leaflet-layer{position:absolute;left:0;top:0}
+.leaflet-container{overflow:hidden;font-family:var(--f-body);-webkit-tap-highlight-color:transparent}
+.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}
+.leaflet-tile{visibility:hidden;user-select:none}.leaflet-tile-loaded{visibility:inherit}
+.leaflet-container img.leaflet-tile{max-width:none!important;max-height:none!important;width:256px;height:256px}
+.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-tooltip-pane{z-index:650}
+.leaflet-control{position:relative;z-index:800;pointer-events:auto;float:left;clear:both}
+.leaflet-top,.leaflet-bottom{position:absolute;z-index:1000;pointer-events:none}
+.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}
+.leaflet-top .leaflet-control{margin-top:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:6px}.leaflet-bottom .leaflet-control{margin-bottom:4px}
+.leaflet-interactive{cursor:pointer}
+.leaflet-zoom-animated{transform-origin:0 0}
+.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.35);border-radius:8px}
+.leaflet-bar a{background:var(--surface);color:var(--fg);border-bottom:1px solid var(--line);width:34px;height:34px;line-height:34px;display:block;text-align:center;text-decoration:none;font:700 18px var(--f-body)}
+.leaflet-bar a:first-child{border-radius:8px 8px 0 0}.leaflet-bar a:last-child{border-radius:0 0 8px 8px;border-bottom:none}
+.leaflet-tooltip{position:absolute;padding:6px 10px;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:8px;white-space:nowrap;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.2);font-size:14px}
+.leaflet-control-attribution{font-size:11px;background:rgba(255,255,255,.8);color:#333;padding:0 5px}
+.leaflet-control-attribution a{color:#2B66B0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="hero-band"><header class="hero">
+  <img src="img/portada.jpg" srcset="img/portada_m.jpg 800w, img/portada.jpg 1600w" sizes="(max-width:720px) 100vw, 1180px" alt="Panorámica del valle de Girardota con el lema ¡Girardota, Te Queremos! y el logo de la Alcaldía">
+  <div class="hero-txt">
+    <p class="eyebrow">Respuesta al Concejo Municipal</p>
+    <h1>Atención de emergencias 2026</h1>
+    <p class="sub">Secretaría de Infraestructura · Coordinación de Gestión del Riesgo de Desastres</p>
+    <p class="date">Corte: octubre de 2026</p>
+  </div>
+</header></div>
+
+<nav class="bar" aria-label="Contenido">
+  <div class="wrap">
+    <a href="#cifras">Cifras del año</a>
+    <a href="#valoraciones">Valoraciones de riesgo</a>
+    <a href="#bomberos">Bomberos</a>
+    <a href="#sismo">Sismo del 10 de agosto</a>
+    <a href="#eventos">Eventos del año</a>
+    <a href="#mapa">Por vereda</a>
+    <a href="#fuentes">Fuentes</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="cifras">
+  <div class="head">
+    <p class="kicker">Eje 1 de la citación del 5 de octubre de 2026</p>
+    <h2>Lo que se atendió en 2026</h2>
+    <p>El municipio atiende las emergencias por dos frentes: el área de Gestión del Riesgo, que valora el riesgo y responde a la ciudadanía, y el Cuerpo de Bomberos Voluntarios, que presta el servicio de emergencias por contrato. En 2026 no ha sido necesario declarar calamidad pública.</p>
+  </div>
+  <div class="grid g5">
+    <div class="card kpi lead"><span class="n">≈325</span><span class="l">visitas de valoración y respuestas a peticiones</span><span class="s">Gestión del Riesgo, enero a octubre</span></div>
+    <div class="card kpi"><span class="n">546</span><span class="l">eventos atendidos por Bomberos</span><span class="s">enero a julio</span></div>
+    <div class="card kpi"><span class="n">178</span><span class="l">reportes del sismo registrados</span><span class="s">115 ya con visita o cierre</span></div>
+    <div class="card kpi"><span class="n">6</span><span class="l">incendios de cobertura e industriales</span><span class="s">4 de cobertura vegetal, 2 industriales</span></div>
+    <div class="card kpi"><span class="n">0</span><span class="l">declaratorias de calamidad pública</span><span class="s">en 2023 y 2024 sí hubo</span></div>
+  </div>
+</section>
+
+<section id="valoraciones">
+  <div class="head">
+    <p class="kicker">Gestión del Riesgo</p>
+    <h2>Valoraciones técnicas y respuestas a la ciudadanía</h2>
+    <p>Cada solicitud se atiende con visita técnica y un concepto escrito. En el primer semestre se registraron 112; con la demanda que trajo el sismo de agosto, el año suma cerca de 325.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Primer semestre: 112 valoraciones</h3>
+      <div class="chips" role="group" aria-label="Ver valoraciones"><button class="chip" aria-pressed="true" data-v="tipo">Por tipo</button><button class="chip" aria-pressed="false" data-v="mes">Por mes</button><button class="chip" aria-pressed="false" data-v="origen">Por origen</button><button class="chip" aria-pressed="false" data-v="vereda">Por vereda</button></div>
+      <div class="bars" id="bGRD"></div>
+      <p class="src" id="nGRD"></p>
+    </div>
+    <div class="card">
+      <h3>Qué se recomendó a las familias</h3>
+      <div class="tbl"><table><thead><tr><th>Recomendación (primer semestre)</th><th class="num">Casos</th></tr></thead><tbody>
+        <tr><td>Evacuación preventiva</td><td class="num">1</td></tr>
+        <tr><td>Evacuación temporal o parcial</td><td class="num">2</td></tr>
+        <tr><td>Restricción o limitación de uso del inmueble</td><td class="num">3</td></tr>
+        <tr><td>Protocolo de evacuación condicionada</td><td class="num">4</td></tr>
+        <tr><td>Evacuación definitiva o reasentamiento</td><td class="num">0</td></tr>
+      </tbody></table></div>
+      <div class="note ok">Ningún caso valorado configuró riesgo no mitigable. Seis de cada diez eventos con amenaza identificada fueron de origen socionatural: cortes de talud, llenos y aguas lluvias mal manejadas. Buena parte del riesgo se previene construyendo con acompañamiento técnico.</div>
+    </div>
+  </div>
+</section>
+
+<section id="bomberos">
+  <div class="head">
+    <p class="kicker">Cuerpo de Bomberos Voluntarios de Girardota</p>
+    <h2>546 eventos atendidos entre enero y julio</h2>
+    <p>El servicio se presta mediante el contrato PS190-2026 con el Cuerpo de Bomberos Voluntarios. Cada mes el contratista entrega su informe de atenciones y la supervisión lo verifica.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h3>Eventos por tipo de atención</h3><div class="bars" id="bCBVG"></div></div>
+    <div class="card">
+      <h3>Lectura de las cifras</h3>
+      <div class="note info"><b>Siete de cada diez</b> atenciones son de salud y movilidad: 251 atenciones prehospitalarias, 106 accidentes de tránsito y 29 traslados de pacientes.</div>
+      <div class="note warn"><b>Incendios y materiales peligrosos:</b> 13 incendios estructurales, 11 derrames de hidrocarburos, 5 fugas de gas, 4 incendios forestales y 1 vehicular.</div>
+      <div class="note ok"><b>Prevención:</b> 17 controles de quemas prohibidas, 18 talas de árboles en riesgo, 28 apoyos a eventos masivos y 3 simulacros.</div>
+      <p class="src">Los informes de agosto y septiembre se suman cuando el contratista los entregue y la supervisión los verifique.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sismo">
+  <div class="head">
+    <p class="kicker">10 de agosto de 2026 · 7:34 a. m.</p>
+    <h2>Sismo de magnitud 7,4: 178 reportes atendidos uno a uno</h2>
+    <p>Epicentro en San José del Palmar (Chocó), a unos 103 km de profundidad, según el Servicio Geológico Colombiano. El CMGRD se activó, se priorizaron las instituciones educativas y cada reporte se registró con ubicación, foto y estado.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h3>Estado de los 178 reportes</h3><div class="bars" id="bSismo"></div>
+      <p class="src">Corte al 5 de octubre de 2026. Los reportes sin visita se cierran por rutas veredales según prioridad.</p></div>
+    <div class="card"><h3>Qué se revisó</h3><div class="bars" id="bSector"></div>
+      <p>122 viviendas con afectación reportada, 12 en estado crítico y 3 evacuadas. 35 de las 40 sedes educativas revisadas, sin novedad estructural.</p>
+      <a class="chip" style="align-self:flex-start;text-decoration:none;background:var(--lima);border-color:var(--lima);color:#0F2A10" href="https://alejandramontoyacuartas-ship-it.github.io/tablero-emergencias-girardota/" target="_blank" rel="noopener">Ver el tablero del sismo ↗</a></div>
+  </div>
+</section>
+
+<section id="eventos">
+  <div class="head">
+    <p class="kicker">Línea de tiempo</p>
+    <h2>Los eventos de mayor atención en 2026</h2>
+  </div>
+  <div class="tl">
+    <div class="ev"><span class="d">Enero a julio</span><h3>4 incendios de cobertura vegetal</h3><p>Todos originados en quemas de residuos sin control en la zona rural. La vigilancia se concentra en Potrerito, La Palma, Tasajera, El Palmar y El Cano.</p></div>
+    <div class="ev"><span class="d">Segundo trimestre</span><h3>Incendios en vivienda y bodega de reciclaje</h3><p>Incendio de vivienda en el barrio La Florida e incendio de una bodega de reciclaje con 14 familias afectadas y una persona herida.</p></div>
+    <div class="ev"><span class="d">24 de junio</span><h3>Simulación de emergencia en la Central La Tasajera</h3><p>Ejercicio con Cruz Roja y EPM sobre el plan de gestión del riesgo de la central.</p></div>
+    <div class="ev"><span class="d">10 de agosto</span><h3>Sismo de magnitud 7,4</h3><p>178 reportes en viviendas, sedes educativas y edificios públicos, atendidos con visitas técnicas y formato EDAN.</p></div>
+    <div class="ev"><span class="d">18 de agosto</span><h3>Sesión del CMGRD</h3><p>Seguimiento al sismo y preparación ante el fenómeno de El Niño. Es la tercera sesión del Consejo en 2026.</p></div>
+    <div class="ev"><span class="d">24 de agosto</span><h3>Incendio industrial en San Diego, sector Cabildo</h3><p>Empresa de pinturas y solventes. El reporte entró a las 13:18 y Bomberos llegó a las 13:35.</p>
+      <ul><li>Ocho cuerpos de bomberos: Girardota, Copacabana, Bello, Barbosa, Medellín, Itagüí, Caldas y Sabaneta.</li><li>Perímetro de seguridad de 2.000 m y 29 personas evacuadas de las edificaciones vecinas.</li><li>Fuga de gas controlada por EPM a las 15:29; incendio confinado al 95 % a las 2:20 del 25 de agosto.</li><li>33 perros rescatados por Bienestar Animal con apoyo de Bomberos y Policía.</li><li>Medidas preventivas de suspensión de actividades por Resolución 2949 del 21 de septiembre.</li></ul></div>
+    <div class="ev"><span class="d">22 de octubre</span><h3>Simulacro en la Central La Tasajera</h3><p>Programado para el cuarto trimestre.</p></div>
+  </div>
+</section>
+
+<section id="mapa">
+  <div class="head">
+    <p class="kicker">Por vereda</p>
+    <h2>Dónde se concentró la atención</h2>
+    <p>Toque una vereda o elíjala en la lista. Las cifras son totales por vereda; no se publican datos de personas.</p>
+  </div>
+  <div class="chips" role="group" aria-label="Indicador del mapa"><button class="chip" aria-pressed="true" data-l="sismo">Reportes del sismo</button><button class="chip" aria-pressed="false" data-l="sismo_crit">Viviendas críticas por el sismo</button><button class="chip" aria-pressed="false" data-l="vis">Valoraciones 1.er semestre</button></div>
+  <div class="mapwrap">
+    <div class="card" style="padding:10px;gap:10px"><div id="map" role="application" aria-label="Mapa de veredas de Girardota"></div><div class="legend" id="legend"></div></div>
+    <div class="card ficha" aria-live="polite">
+      <label for="vSel" style="font-weight:700">Vereda o zona</label><select id="vSel"></select>
+      <div id="ficha"></div>
+    </div>
+  </div>
+  <p class="src">Valoraciones del primer semestre: el registro desagregado publica las veredas con 3 o más visitas; las demás se muestran sin dato.</p>
+</section>
+
+<section>
+  <div class="head"><p class="kicker">Para la comunidad</p><h2>¿Cómo reportar una emergencia?</h2>
+  <p>Durante el incendio de agosto hubo llamadas a cuerpos de bomberos de otras ciudades, y eso demoró la respuesta. Llame a las líneas nacionales, que enrutan la llamada al organismo del municipio.</p></div>
+  <div class="lines"><div class="line"><b>123</b><span>Línea única de emergencias</span></div><div class="line"><b>119</b><span>Bomberos</span></div></div>
+</section>
+
+<section id="fuentes">
+  <div class="head"><p class="kicker">Fuentes y método</p><h2>De dónde salen las cifras</h2></div>
+  <div class="tbl"><table><tbody>
+    <tr><td><b>≈325 visitas y respuestas</b></td><td>Registro interno del área de Gestión del Riesgo, enero a octubre de 2026 (cifra aproximada).</td></tr>
+    <tr><td><b>112 valoraciones, recomendaciones de evacuación, incendios y calamidad</b></td><td>Oficio SI-2026-476 del 25 de agosto de 2026, respuesta a solicitud congresional.</td></tr>
+    <tr><td><b>546 eventos de Bomberos</b></td><td>Informes mensuales del contrato PS190-2026 verificados por la supervisión (SI-2026-476).</td></tr>
+    <tr><td><b>Sismo del 10 de agosto</b></td><td>Tablero de manejo de emergencia sísmica del CMGRD, corte al 5 de octubre de 2026. Datos del evento: Servicio Geológico Colombiano.</td></tr>
+    <tr><td><b>Incendio del 24 de agosto</b></td><td>Informe de atención del Cuerpo de Bomberos (1 de septiembre) y oficio SIR-2026-243 del 30 de septiembre de 2026.</td></tr>
+    <tr><td><b>Otros eventos</b></td><td>Fichas de seguimiento del Plan de Desarrollo «Decencia en lo Público», indicador 2.3.1.7.</td></tr>
+  </tbody></table></div>
+  <p class="src">Esta página no contiene datos personales. Los reportes individuales del sismo se gestionan conforme a la Ley 1581 de 2012.</p>
+</section>
+
+</main>
+
+<footer><div class="wrap"><span>Alcaldía de Girardota · Secretaría de Infraestructura · Coordinación de Gestión del Riesgo de Desastres</span><span>girardota.gov.co · @alcaldiagirardota</span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="data.js"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const fmt=n=>n==null?'—':Number(n).toLocaleString('es-CO',{maximumFractionDigits:1});
+function bars(el,rows,max){max=max||Math.max(...rows.map(r=>r[1]));el.innerHTML=rows.map(([l,v,c])=>`<div class="brow"><span>${l}</span><span class="t"><span class="f ${c||''}" style="width:${(100*v/max).toFixed(1)}%"></span></span><span class="v">${fmt(v)}</span></div>`).join('');}
+const GRD={tipo:[['Afectación estructural de vivienda',53],['Movimientos en masa',38,'crit'],['Inundaciones y encharcamientos',8,'info'],['Otras valoraciones y asistencia',13]],
+ mes:[['Enero',12],['Febrero',27],['Marzo',22],['Abril',9],['Mayo',21],['Junio',21]],
+ origen:[['Socionatural',48,'crit'],['Natural geológico',24],['Natural hidrometeorológico',9,'info'],['Asistencia técnica y orientación',31]],
+ vereda:[['San Andrés',8],['La Palma',7],['La Meseta',6],['San Esteban',5],['Manga Arriba',5],['Loma de los Ochoa',5],['Mercedes Ábrego',3],['San Diego',3],['Jamundí',3]]};
+const NOTE={tipo:'Total 112. Sin crecientes súbitas ni vendavales en el semestre.',mes:'Febrero fue el mes de mayor demanda (27).',origen:'Socionatural: ladera o cauce intervenido por acción humana.',vereda:'Veredas con 3 o más valoraciones; el resto se reparte en otras veredas y en la zona urbana.'};
+function grd(v){bars($('#bGRD'),GRD[v]);$('#nGRD').textContent=NOTE[v];}
+grd('tipo');
+$$('[data-v]').forEach(c=>c.addEventListener('click',()=>{$$('[data-v]').forEach(x=>x.setAttribute('aria-pressed',x===c));grd(c.dataset.v);}));
+bars($('#bCBVG'),[['Atención prehospitalaria',251,'info'],['Accidentes de tránsito',106,'info'],['Rescate de animales',51],['Traslado de pacientes',29,'info'],['Apoyo a eventos masivos',28],['Talas por riesgo',18],['Control de quemas',17],['Incendios estructurales',13,'crit'],['Derrames de hidrocarburos',11,'crit'],['Fugas de gas',5,'crit'],['Incendios forestales',4,'crit'],['Otros',13]]);
+bars($('#bSismo'),[['Atendido, sin riesgo',73],['Inspeccionado, con afectación',30,'warn'],['Crítico',12,'crit'],['En atención',2,'warn'],['Reportado, pendiente de visita',61,'info']]);
+bars($('#bSector'),[['Viviendas',129],['Sedes educativas',40,'lima'],['Edificaciones públicas',9,'info']]);
+
+/* índice activo */
+const secs=['cifras','valoraciones','bomberos','sismo','eventos','mapa','fuentes'];
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('.bar a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}),{rootMargin:'-40% 0px -55% 0px'}):null;
+if(io) secs.forEach(s=>{const el=document.getElementById(s); if(el) io.observe(el);});
+
+/* mapa */
+const D=window.PORTAL_DATA||{},G=window.PORTAL_GEO||{features:[]};
+const LAY={sismo:'Reportes del sismo',sismo_crit:'Viviendas críticas por el sismo',vis:'Valoraciones 1.er semestre'};
+const RAMP=['#E6F4D2','#B9E08A','#7FC24A','#3E9A3A','#12745C'];
+let cur='sismo',sel=null,map,geo,breaks=[];
+const vk=G.features.filter(f=>f.properties.tipo==='vereda').map(f=>f.properties.key);
+const nm={urbano:'Zona urbana (cabecera)'};G.features.forEach(f=>{if(f.properties.tipo==='vereda')nm[f.properties.key]=f.properties.nombre;});
+const keyOf=f=>f.properties.tipo==='perimetro_urbano'?'urbano':f.properties.key;
+const val=k=>(D[k]||{})[cur];
+function brk(){const v=[...vk,'urbano'].map(val).filter(x=>x>0).sort((a,b)=>a-b);const mx=v[v.length-1]||1;breaks=[...new Set([.25,.5,.75].map(q=>v[Math.floor(q*(v.length-1))]))].filter(b=>b>0&&b<mx);}
+function col(v){if(!v)return null;let i=0;while(i<breaks.length&&v>breaks[i])i++;return RAMP[i+(4-breaks.length)];}
+function sty(f){if(f.properties.tipo==='limite_municipal')return{color:'#12745C',weight:3,fill:false,interactive:false};const k=keyOf(f),c=col(val(k));return{color:k===sel?'#68C200':'#ffffff',weight:k===sel?4:1.2,fillColor:c||'#C9D3CE',fillOpacity:c?0.8:0.35};}
+function leg(){const n=breaks.length+1,b=[0,...breaks];$('#legend').innerHTML=`<b style="color:var(--fg)">${LAY[cur]}</b>`+b.map((x,i)=>`<span><span class="sw" style="background:${RAMP[i+(5-n)]}"></span> ${i===0?(breaks.length?'1–'+fmt(breaks[0]):'1 o más'):i===n-1?'más de '+fmt(breaks[i-1]):fmt(breaks[i-1]+1)+'–'+fmt(breaks[i])}</span>`).join('')+'<span><span class="sw" style="background:#C9D3CE"></span> sin registro</span>';}
+function ficha(k){sel=k;if(geo)geo.setStyle(sty);$('#vSel').value=k||'';if(!k){$('#ficha').innerHTML='<p class="src">Elija una vereda.</p>';return;}const d=D[k]||{};const r=(l,v)=>`<dt>${l}</dt><dd>${v==null?'Sin dato':fmt(v)}</dd>`;
+ $('#ficha').innerHTML=`<h3 style="font-size:22px;margin-top:6px">${nm[k]}</h3><dl>${r('Reportes del sismo',d.sismo||0)}${r('Viviendas en estado crítico',d.sismo_crit||0)}${r('Reportes pendientes de visita',d.sismo_pend||0)}${r('Valoraciones 1.er semestre',d.vis)}${r('Habitantes (DANE 2026)',d.pob)}</dl>`;}
+function init(){if(!window.L){$('#map').innerHTML='<p style="padding:16px">El mapa necesita conexión a internet.</p>';return;}
+ map=L.map('map',{zoomSnap:.25,minZoom:11});
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:18,attribution:'© OpenStreetMap · © CARTO'}).addTo(map);
+ brk();geo=L.geoJSON(G,{style:sty,onEachFeature:(f,l)=>{if(f.properties.tipo==='limite_municipal')return;const k=keyOf(f);l.bindTooltip(()=>`<b>${nm[k]}</b><br>${LAY[cur]}: ${val(k)==null?'sin dato':fmt(val(k))}`,{sticky:true});l.on('click',()=>ficha(k));}}).addTo(map);
+ const b=geo.getBounds();map.fitBounds(b,{padding:[8,8]});map.setMaxBounds(b.pad(.4));leg();}
+$('#vSel').innerHTML='<option value="">— Elegir —</option><option value="urbano">Zona urbana (cabecera)</option>'+vk.slice().sort((a,b)=>nm[a].localeCompare(nm[b],'es')).map(k=>`<option value="${k}">${nm[k]}</option>`).join('');
+$('#vSel').addEventListener('change',e=>ficha(e.target.value||null));
+$$('[data-l]').forEach(c=>c.addEventListener('click',()=>{$$('[data-l]').forEach(x=>x.setAttribute('aria-pressed',x===c));cur=c.dataset.l;if(geo){brk();geo.setStyle(sty);leg();}}));
+init();ficha('san andres');
+})();
+</script>
+</body>
+</html>
