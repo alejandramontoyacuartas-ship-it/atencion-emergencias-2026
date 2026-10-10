@@ -6,7 +6,7 @@
 <title>Atención de Emergencias Girardota 2026</title>
 <meta name="description" content="Respuesta al Concejo Municipal de Girardota: atención de emergencias y valoraciones de riesgo en 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: portada institucional · cifras del año · un bloque por frente de atención · eventos del año · mapa · fuentes */
 :root{
@@ -14,8 +14,8 @@
   --bg:#F3F6F4; --surface:#FFFFFF; --surface-2:#E9F1EC; --fg:#16241F; --muted:#51625B; --line:#D5E0DA;
   --crit:#B5400F; --crit-bg:#FBE9DF; --warn:#A86A00; --warn-bg:#FFF2D6; --ok:#12745C; --ok-bg:#E2F2EA; --info:#2B66B0; --info-bg:#E4EDF8;
   --num:#12745C; --map-bg:#E6EEE9; --map-line:#FFFFFF;
-  --f-display:'Nunito','Trebuchet MS',Arial,sans-serif;
-  --f-body:'Nunito Sans','Segoe UI',Arial,sans-serif;
+  --f-display:'Arial Narrow','Archivo Narrow','Arial Nova Cond',Arial,sans-serif;
+  --f-body:'Arial Narrow','Archivo Narrow','Arial Nova Cond',Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0C1A15; --surface:#13251E; --surface-2:#183027; --fg:#E7F1EC; --muted:#A3BBB0; --line:#28443A;
@@ -39,7 +39,7 @@ a{color:inherit}
 .hero img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .hero-txt{position:absolute;left:0;top:0;bottom:0;width:30.2%;padding:clamp(16px,3vw,44px) clamp(14px,2.2vw,32px);display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1vw,14px);color:#fff}
 .hero-txt .eyebrow{font-weight:700;font-size:clamp(11px,1vw,14px);letter-spacing:.12em;text-transform:uppercase;color:#C9F09A}
-.hero-txt h1{font-weight:900;font-size:clamp(22px,2.9vw,40px)}
+.hero-txt h1{font-weight:700;font-size:clamp(22px,2.9vw,40px)}
 .hero-txt .sub{font-size:clamp(12px,1.15vw,17px);color:#DDF0E7}
 .hero-txt .date{display:inline-block;align-self:flex-start;background:var(--lima);color:#0F2A10;font-weight:800;font-family:var(--f-display);border-radius:999px;padding:4px 14px;font-size:clamp(11px,1vw,15px)}
 @media (max-width:720px){.hero-txt{position:static;width:auto;background:#12745C;padding:20px 16px}}
@@ -54,7 +54,7 @@ main{display:flex;flex-direction:column;gap:56px;padding-block:32px 64px}
 section{display:flex;flex-direction:column;gap:20px;scroll-margin-top:72px}
 .head{display:flex;flex-direction:column;gap:6px;max-width:860px}
 .kicker{font:800 13px var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--lima-txt)}
-.head h2{font-size:clamp(26px,3.4vw,38px);font-weight:900}
+.head h2{font-size:clamp(26px,3.4vw,38px);font-weight:700}
 .head p{color:var(--muted);font-size:17px;max-width:68ch}
 .grid{display:grid;gap:16px}
 .g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
@@ -62,7 +62,7 @@ section{display:flex;flex-direction:column;gap:20px;scroll-margin-top:72px}
 .g5{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
 .card h3{font-size:19px;font-weight:800}
-.kpi .n{font:900 clamp(32px,4vw,46px)/1.05 var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
+.kpi .n{font:700 clamp(32px,4vw,46px)/1.05 var(--f-display);color:var(--num);font-variant-numeric:tabular-nums}
 .kpi .l{font-weight:700}
 .kpi .s{color:var(--muted);font-size:14px}
 .kpi.lead{background:var(--verde);border-color:var(--verde);color:#fff}
@@ -109,7 +109,7 @@ select{font:600 15px var(--f-body);padding:9px 12px;border-radius:10px;border:1p
 .ficha dd{text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
 .lines{display:flex;gap:12px;flex-wrap:wrap}
 .line{display:flex;align-items:center;gap:12px;background:var(--surface);border:2px solid var(--verde);border-radius:14px;padding:12px 18px}
-.line b{font:900 34px var(--f-display);color:var(--num)}
+.line b{font:700 34px var(--f-display);color:var(--num)}
 footer{border-top:4px solid var(--lima);background:#12745C;color:#E3F3EA;padding-block:24px;font-size:14px}
 footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 /* leaflet esencial */
@@ -186,6 +186,22 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
   details.soporte .in{padding:0 22px 22px}
   footer{font-size:16px}
 }
+/* ===== Identidad Alcaldía de Girardota (plantilla oficial) ===== */
+body{font-stretch:condensed}
+h1,h2,h3,.kpi .n,.respuesta,.eje .big,.q .no,.line b,.clock b{font-weight:700;letter-spacing:0}
+.bar{box-shadow:none;border-bottom:6px solid transparent;border-image:linear-gradient(90deg,#68C200 0 18%,#0D9771 18% 100%) 1}
+.bar a{font-weight:700}
+.kicker{letter-spacing:.14em}
+.head,.oficio .meta{position:relative}
+.marca-iconos{display:block;width:84px;height:auto;opacity:.9}
+.oficio .meta{background:url(img/iconos.png) no-repeat right bottom/96px auto;padding-bottom:8px}
+footer.alcaldia{background:#FFFFFF;color:#3D4A45;border-top:0;padding-block:28px 0}
+footer.alcaldia .wrap{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+footer.alcaldia .franja{flex:1 1 420px;display:flex;flex-direction:column;min-width:0}
+footer.alcaldia .franja p{background:#E7E7E7;padding:14px 18px;font-size:16px;color:#3D4A45}
+footer.alcaldia .franja span{display:block;height:8px;background:linear-gradient(90deg,#68C200 0 22%,#0D9771 22% 100%)}
+footer.alcaldia img{display:block;width:min(100%,560px);height:auto}
+@media (min-width:1400px){footer.alcaldia .franja p{font-size:19px}.marca-iconos{width:110px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -344,7 +360,7 @@ footer .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
 
 </main>
 
-<footer><div class="wrap"><span>Alcaldía de Girardota · Secretaría de Infraestructura · Coordinación de Gestión del Riesgo de Desastres</span><span>girardota.gov.co · @alcaldiagirardota</span></div></footer>
+<footer class="alcaldia"><div class="wrap"><div class="franja"><p>Alcaldía de Girardota · Secretaría de Infraestructura · Coordinación de Gestión del Riesgo de Desastres</p><span></span></div><img src="img/marca_footer.png" alt="girardota.gov.co · @alcaldiagirardota · Alcaldía de Girardota"></div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="data.js"></script>
